@@ -1,0 +1,33 @@
+kernel SinusGenerator : public ImageComputationKernel<eComponentWise>
+{
+    Image<eWrite, eAccessPoint> dst;
+
+param:
+    int max_value; 
+    int min_value;
+    int periode; 
+    int dephasage;
+    int frame;
+
+local:
+
+  void define() {
+    defineParam(max_value, "Max Value", 1); 
+    defineParam(min_value, "Min Value", 0); 
+    defineParam(periode, "Frequence", 10); 
+    defineParam(dephasage, "Dephasage", 0);
+    defineParam(frame, "time", 0);
+  }
+
+  void init() {
+  }
+
+  void process() {
+    float amplitude   = (max_value-min_value)/2;
+    float frequence   = (2*PI)/periode;
+    float deplacement = (max_value+min_value)/2;
+
+    dst() =  amplitude*sin(frequence*(frame-dephasage))+deplacement;
+    
+  }
+};

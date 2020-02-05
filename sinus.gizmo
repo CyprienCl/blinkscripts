@@ -1,0 +1,41 @@
+Gizmo {
+ inputs 0
+ name SinusGenerator
+ selected true
+ xpos 162
+ ypos -76
+ addUserKnob {20 SinusGenerator}
+ addUserKnob {41 "Local GPU: " T BlinkScript2.gpuName}
+ addUserKnob {41 "Use GPU if Available" T BlinkScript2.useGPUIfAvailable}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {41 "Max Value" T "BlinkScript2.SinusGenerator_Max Value"}
+ addUserKnob {41 "Min Value" T "BlinkScript2.SinusGenerator_Min Value"}
+ addUserKnob {41 Frequence T BlinkScript2.SinusGenerator_Frequence}
+ addUserKnob {41 Dephasage T BlinkScript2.SinusGenerator_Dephasage}
+ addUserKnob {41 time T BlinkScript2.SinusGenerator_time}
+}
+ BlinkScript {
+  inputs 0
+  recompileCount 47
+  ProgramGroup 1
+  KernelDescription "2 \"SinusGenerator\" iterate componentWise 9d364e564d82af83f096c9d6ed38e32a6ecc04d753aedad863f476b0d44663ad 1 \"dst\" Write Point 5 \"Max Value\" Int 1 AQAAAA== \"Min Value\" Int 1 AAAAAA== \"Frequence\" Int 1 CgAAAA== \"Dephasage\" Int 1 AAAAAA== \"time\" Int 1 AAAAAA== 5 \"max_value\" 1 1 \"min_value\" 1 1 \"periode\" 1 1 \"dephasage\" 1 1 \"frame\" 1 1 0"
+  EncodedSource "1 712 T53I1BJZ0ibMPenSxcZfeJGrDGOUV0QggfFZxY+WNpYAH4VfBdGfUROgD99W06HXfWT1AUHhSv805Ui+55ZMKSQ3cndCjMgIEiPU9AqndZiBqDBCseAoH1OzkHxsF/Q8wgo4kfgynhYbNSX1jpFX6VNBYR0uQ2lGK22R78Xf9niQ9zv2bm1Lpe9fW/8cGp/qfrsYDM4roeaylppC+3HhaYTQeJJd2zqCxgCPtdUCIlyTToOUJwbo7Yjiah/m0bZ1zRaMCO5Ri26xO4AxZe4FyEsVy1nwWxOOtqVbAsTz4pMkxDrt3rnHHrbT5aEXxMnHG6SrM+BL/mJbzh1wOjZUltbM8o8uBGlXLRg7XaOKbHDTSaCR5W92z8ieHWrAwDCEEoTeMC/ybsy+fiYgiBy2PoNf2AMkEK0Tq9AXrx+pRzb3iti1MiPZNBUQTVoHVClH9ivTSWbIBPIQAFs8MjA9gcnszq8exodYCH4K1ezUBhuGCC63YGiRz5xiAsUv4vEqbc8sLQhjSYEZCT74pGZ51g3sER9Gs1FGGESavhTrrNVDT6eJXdO9TRscfCSHlo2vkVmZugdMxHAISlU5XLjlpZmwIbzhFBQims9TZRywNWPsUgMCnRMJ68G3bDN53UE2DYTJsaOSkMTKHv6BLJtfY6LzGN6Cj8USEgqbwKxF9ORYwjZJPojYoixO7cTSBUX9XCFmcdqdP175j0weiOk+bXGRsTUEoq4uRTmlQ5N/EhyAv+jrqR6bnpYT36Fn8SQwNognK7ZjNIdXT0lXjpnPrZzsUMX4iJKehtJnHKAS738idx9NEka5qjCeBEUnOaUIhVdTFG8/aLtTRGwhz7zh5IT3jAMc1FmQ5yz6b9oQmFns8hB4pTyIaC3+kksasekAOOp0XMBFymGMQu0T6FsrCjM69kXML2X56SEuvsCChVhL7w6mNyZGnG2bmtmFF8am"
+  useGPUIfAvailable false
+  vectorize false
+  rebuild ""
+  "SinusGenerator_Max Value" 2
+  "SinusGenerator_Min Value" -10
+  SinusGenerator_Frequence 3
+  SinusGenerator_time {{t}}
+  protectKernelWhenPublishing true
+  rebuild_finalise ""
+  name BlinkScript2
+  xpos -16
+  ypos -90
+ }
+ Output {
+  name Output1
+  xpos -16
+  ypos 10
+ }
+end_group
