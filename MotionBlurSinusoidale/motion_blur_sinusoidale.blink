@@ -1,0 +1,47 @@
+kernel BoxBlur1DSinusoidale : public ImageComputationKernel<eComponentWise>
+{
+  Image<eRead, eAccessRanged1D, eEdgeClamped> src;
+  Image<eWrite, eAccessPoint> dst;
+param:
+  int axe; // The Axe of the blur
+  int max_value; 
+  int min_value;
+  int periode; 
+  int dephasage;
+  int frame;
+
+local:
+  int _filterWidth;
+  int radius;  //The radius of our box blur
+
+  void define() {
+    defineParam(axe, "Axe", 0);
+    defineParam(max_value, "Max Value", 1); 
+    defineParam(min_value, "Min Value", 0); 
+    defineParam(periode, "Frequence", 10); 
+    defineParam(dephasage, "Dephasage", 0);
+    defineParam(frame, "time", 0);
+  }
+
+  void init() {
+    float amplitude   = (max_value-min_value)/2;
+    float frequence   = (2*PI)/periode;
+    float deplacement = (max_value+min_value)/2;
+    radius = round(amplitude*sin(frequence*(frame-dephasage))+deplacement);
+    src.setRange(-radius, radius);
+    if (axe == 0)
+    {
+      src.setAxis(eY);
+    }else{
+      src.setAxis(eX);
+    }
+    _filterWidth = 2 * radius + 1;
+  }
+
+  void process() {
+    float sum = 0.0f;
+    for(int i = -radius; i <= radius; i++)
+      sum += src(i);
+    dst() = sum / (float)_filterWidth;
+  }
+};

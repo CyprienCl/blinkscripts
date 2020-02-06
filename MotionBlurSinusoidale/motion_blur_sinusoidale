@@ -1,0 +1,43 @@
+Gizmo {
+ name BoxBlur1DSinusoidale
+ selected true
+ xpos 404
+ ypos -165
+ addUserKnob {20 BoxBlur1DSinusoidale}
+ addUserKnob {41 "Local GPU: " T BlinkScript2.gpuName}
+ addUserKnob {41 "Use GPU if Available" T BlinkScript2.useGPUIfAvailable}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {41 Axe T BlinkScript2.BoxBlur1DSinusoidale_Axe}
+ addUserKnob {41 "Max Value" T "BlinkScript2.BoxBlur1DSinusoidale_Max Value"}
+ addUserKnob {41 "Min Value" T "BlinkScript2.BoxBlur1DSinusoidale_Min Value"}
+ addUserKnob {41 Frequence T BlinkScript2.BoxBlur1DSinusoidale_Frequence}
+ addUserKnob {41 Dephasage T BlinkScript2.BoxBlur1DSinusoidale_Dephasage}
+ addUserKnob {41 time T BlinkScript2.BoxBlur1DSinusoidale_time}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 94
+  ypos -197
+ }
+ BlinkScript {
+  recompileCount 68
+  ProgramGroup 1
+  KernelDescription "2 \"BoxBlur1DSinusoidale\" iterate componentWise d8aad0a2ff894b9ab96e32ccbb392cd76ae654bc0dba8d1df4e0cf661455bdbc 2 \"src\" Read Ranged1D \"dst\" Write Point 6 \"Axe\" Int 1 AAAAAA== \"Max Value\" Int 1 AQAAAA== \"Min Value\" Int 1 AAAAAA== \"Frequence\" Int 1 CgAAAA== \"Dephasage\" Int 1 AAAAAA== \"time\" Int 1 AAAAAA== 6 \"axe\" 1 1 \"max_value\" 1 1 \"min_value\" 1 1 \"periode\" 1 1 \"dephasage\" 1 1 \"frame\" 1 1 5 \"srcrangedAxisMask\" Int 1 1 AAAAAA== \"srcrangeMin\" Int 1 1 AAAAAA== \"srcrangeMax\" Int 1 1 AAAAAA== \"_filterWidth\" Int 1 1 AAAAAA== \"radius\" Int 1 1 AAAAAA=="
+  EncodedSource "1 1169 BlgKOEmbAaZZTT/eMseqybS4D0tBLOMLtZo2EIoaqzbirm3+Arfd6wno4GcMTC8tQZxfffn02DuWm+9Pmqwp4vLcyasBfGtLsQEZJfWxJ72VscskvqNKeKYrPe1YRgM1CFeD2mZciAJe1rWUdqoGl8gxJ+bczpwjtQ82PziCmWf1xsiTMS+66tL1/rmrAV+zvYkXPjhlwmQcpquR8+vT2WauqVP8hLsKKfIqwAM/1wqwNA2XKRzKewAIwTF7eEOEC2zHHgGaUAv3GYlrBxasVh6lo568Kai8TFTiakkDtbTcQi8Nj0ZDg4qMQUJTrGb3z64IN3VrNX4cqV4rqFPpWNU2bg4jQLsr1AWdQPCu+g2jUjLj0dVWJ1bMAJuSawNoZ+WbU4w9hlLoCgrcNlSVkiWdLr4nyd1gKVogidLY831DT5ktrYFQN+rFLZmGJzLuhqO50g2ed+yPmBITDmiKoS8k/QC5v6Os147Gz7bmHfv34F7D2ZBn8QRR+A4TO5IODjRjzo7lQ0WtYl3n9P94JUcTRTiGyiNeFNu5lvuB+waXc0MgNmbO9si9/Sy0iL49lNLvhko/3/QqPEL7Ag+r35C6k4Mp0cojSqYKesmKYtldJtyA3BZhjWIGLHk25//UrIaUHj/o4Cx1PHGjPdHuTRLLedwEpkHOavdSFQs3dayfxESTiQvuh0DqOs5ObK8z+/K6NHvXni0UoDs3MW9amVTPWQjYGlDuPgyWhVvmzdwtEgHEvy+rYzHBeMoluHt1mmN8jJtwQI1hO3mfrujvMWFHj/TGxeRnnLhQELwNQEj9s1JAzb9F9N21okm5sa3oeoHAHQrsja8E27C+TFydQxnoeRmMIQMIr+8F8IdoDs3B957rXqdHovAOYRvNDEfRSkPNq0sqxxMJhysL3aoWR3iBlqQfGCrzW8tioHDY9iYShJcaXN9eh3dPpYEePTWNBgk3U5uMfNVrcF2csUhYmVzNF7cpwENL5rGtBkOnBk19sdUaQVEEzGTR0Q558CP1Yoe28+UMwoCpDNIYYkTJ8Kas/lNr9EiobPJ7UZlLcL0Suk/MX8gc3peKk7H4kOVux0FgjnR8KCgfupMEdXbkivf8GWwrh0cIseqxs2odxQmaqqG3gp+OcXexjuJ8HJ5Wm2zvSxC04kyoZXDv7XbIlQaWqZFUUuqtaYkdHshPyPxHYORSPm0vL52Bgk0uz4lWILe2XzEKPYT0h90q1b7bdOgrlTkg2GhqphmX7dPtH+l61vfbsYxXyQLabGD4T9+PWbMklk3O/WlBWdeXHarSsE5b9NyKq3ZSdi/elt1mFarMC1wOkVL/vS6fJeFGMpB7/hE+WhJHMuNSOuRn9YbNygXxc/pXAZSL70LE3qT8Gvwtt5lIukHYFiRhSJJSlsoAK/j8N/BR8oOK+DRtAAh5OfMz0KSO7ZwBjn6JuyquRXhuhSpsi6DJSyjzax2tAzup7pfyA9KA57E9yRYgnqoOA0qZAtXF8se20PYqlt788EKBN3/K8AsVVYyyfPudoC4Zzfp4qI0+vMshIqCmHByvznqxZ9lDX+A2XPA8ROZfy+Q="
+  rebuild ""
+  BoxBlur1DSinusoidale_Axe 1
+  "BoxBlur1DSinusoidale_Max Value" 500
+  BoxBlur1DSinusoidale_time {{t}}
+  protectKernelWhenPublishing true
+  rebuild_finalise ""
+  name BlinkScript2
+  xpos 94
+  ypos -157
+ }
+ Output {
+  name Output1
+  xpos 94
+  ypos -57
+ }
+end_group
